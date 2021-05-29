@@ -12,8 +12,8 @@ const express = require("express")
 const path = require("path")
 const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
-const Schema = mongoose.Schema
 const {uri, port} = require("./config.json")
+const Schema = mongoose.Schema
 
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(r => console.log("Connected to database"))
@@ -61,8 +61,6 @@ app.post("/login", async (req, res) => { //login post
         return res.json(body)
 
     body.ok = true
-
-    console.log(account)
 
     res.json(body)
 })
